@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import uuid from 'uuid';
+import {v4 as uuid} from 'uuid';
 
 
 function TodoForm( { addTodo } ) {
@@ -17,7 +17,7 @@ function TodoForm( { addTodo } ) {
         e.preventDefault();
         if (todo.task.trim()) {
         // trim removes white space so it prevents posting of empty todo Tasks
-            addTodo({ ...todo, id: uuid.v4() })
+            addTodo({ ...todo, id: uuid })
             // reset task input
             setTodo({ ...todo, task: '' })
 
